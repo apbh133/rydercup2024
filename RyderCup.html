@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>The Ryder Cup</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+<body>
+<!--Create the top Navigation-->
+    <div class="topnav">
+        <a class="active" href="RyderCup.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="golfers.html">Golfers</a>
+        <a href="courses.html">Courses</a>
+        <a href="matchups.html">Matchups</a>
+        
+      </div>
+
+      <h1 style="text-align: center;">Welcome to the 2021 Ryder Cup</h1>
+
+      <table class="teams">
+          <tr>
+              <th>Team USA</th>
+              <th>Team Europe</th>
+          </tr>
+          <tr>
+            <td>Anthony Persichino</td>
+            <td>Steve Minaudo</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>TBD</td>
+            <td>TBD</td>
+        </tr>
+      </table>
+
+
+<h2><span>Countdown to The Draft</span></h2>
+ <!-- Display the countdown timer in an element -->
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 15, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+
+</body>
+</html>

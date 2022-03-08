@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Styling React Components</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <link rel="stylesheet" href="hw3_styles.css">
+
+    <style>
+        #container {
+            padding:50px;
+            background-color: #FFF;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Color Hex Code Swatches</h1>
+
+        <h2>A Few Favorite Colors</h2>
+    <div id="container"></div>
+
+    <div id="info"></div>
+
+    <script type="text/babel">
+
+        class Square extends React.Component {
+            render() {
+                var squareStyle = {
+                    height: 150,
+                    backgroundColor: this.props.color
+                };
+                return(
+                    <div style={squareStyle}>
+
+                    </div>
+                );
+            }
+        }
+
+        class Label extends React.Component {
+            render() {
+                var labelStyle = {
+                    fontFamily: "sans-serif",
+                    fontWeight: "bold",
+                    padding: 13,
+                    margin: 0
+                };
+                return (
+                    <p style={labelStyle}>{this.props.color}</p>
+                );
+            }
+        }
+
+        class Card extends React.Component {
+            render() {
+                var cardStyle = {
+                    height: 200,
+                    width: 150,
+                    padding: 0,
+                    backgroundColor: "#FFF",
+                    boxShadow: "0px 0px 5px #666"
+                };
+                return (
+                    <div style={cardStyle}>
+                        <Square color={this.props.color}/>
+                        <Label color={this.props.color}/>
+                    </div>    
+                );
+            }
+        }
+
+
+        /*Display, Label, and Shirt components */
+        class Display extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p><b>{this.props.featureName}</b></p>
+                        <p>{this.props.definition}</p>
+                        <p>{this.props.popular}</p>
+                    </div>
+                );
+            }
+        }
+
+        class Information extends React.Component {
+            render() {
+                return (
+                    <Display {...this.props} />
+                );
+            }
+        }
+
+        class Message extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <Information {...this.props} />
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <div className="cardrow">
+                <Card color="Anthony Persichino" />
+                <Card color="#00ffff" />
+                <Card color="#0040ff" />
+            </div>,
+            document.querySelector("#container")
+            
+        );
+
+        ReactDOM.render(
+            <div>
+                <Message featureName="Color Hex Codes" 
+                         definition="A color hex code is a hexadecimal
+                way to represent a color in RGB format by combining three values - the amounts of red,
+                green and blue - in a particular shade of color." 
+                         popular="One of the most popular hex code colors is #bada55"/>
+            </div>,
+            document.querySelector("#info")
+        );
+
+    
+    </script>
+    </main>
+
+    <footer>
+        <!-- Links to W3C HTML5 & CSS Validation and your Course Homepage --> 
+            <p id="validation">  
+                <a href="http://validator.w3.org/check?uri=referer" title="HTML5 Validation - W3C">HTML5 Validation</a> | 
+                <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" title="CSS Validation - W3C">CSS Validation</a> | 
+                <a href="../home.htm">Course Homepage</a>
+            </p> 
+    </footer>
+</body>
+
+</html>
