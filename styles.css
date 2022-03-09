@@ -19,8 +19,9 @@ th {
   color: yellow;
   font-size: 50px;
   font-family: "Raleway", sans-serif;
-
+  text-align: center;
 }
+
 
 .background {
   background-color: green;
@@ -226,9 +227,7 @@ color:green;
     display: block;
   }
 
-  .topnav ul {
-    display: none;
-  }
+
 }
 .topnav-mobile {
   position: fixed;
