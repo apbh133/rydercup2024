@@ -245,3 +245,9 @@ color:green;
   top: 15px;
   right: 15px;
 }
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
