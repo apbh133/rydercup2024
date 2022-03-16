@@ -26,7 +26,7 @@ th {
 .background {
   background-color: green;
   display: inline-block;
-  
+  opacity: 75%;
 }
 
 
@@ -140,6 +140,7 @@ color:green;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    opacity: 80%;
   }
   
   /* Change the color of links on hover */
